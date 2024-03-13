@@ -2,6 +2,10 @@
 
 This file contains test cases for the `BalancedBrackets` class.
 
+>### - Only brackets return true
+>### - Nested brackets are allowed
+>### - Brackets must follow open close order
+
 ### Test Cases:
 
 1. **Empty Test**
