@@ -2,6 +2,8 @@
 
 This file contains test cases for the `BalancedBrackets` class.
 
+---
+## The Rules for every test, read every test title properly!
 >### - Only brackets return true
 >### - Nested brackets are allowed
 >### - Brackets must follow open close order
@@ -116,50 +118,50 @@ This file contains test cases for the `BalancedBrackets` class.
         }
         ```
 
-10. **Brackets With Other Characters Returns True**
-    - Description: Tests if the method returns `true` when given brackets with other characters.
+10. **Brackets With Text Returns True**
+    - Description: Tests if the method returns `true` when given brackets with text.
     - Input: `"a[b]c"`.
     - Expected Result: `true`.
     - Code:
         ```java
         @Test
-        public void bracketsWithOtherCharactersReturnsTrue() {
+        public void bracketsWithTextReturnsTrue() {
             assertTrue(BalancedBrackets.hasBalancedBrackets("a[b]c"));
         }
         ```
 
-11. **Unbalanced Brackets With Other Characters Returns False**
-    - Description: Tests if the method returns `false` when given unbalanced brackets with other characters.
+11. **Unbalanced Brackets With Text Returns False**
+    - Description: Tests if the method returns `false` when given unbalanced brackets with text.
     - Input: `"a[b"`.
     - Expected Result: `false`.
     - Code:
         ```java
         @Test
-        public void unbalancedBracketsWithOtherCharactersReturnsFalse() {
+        public void unbalancedBracketsWithTextReturnsFalse() {
             assertFalse(BalancedBrackets.hasBalancedBrackets("a[b"));
         }
         ```
 
-12. **Only Curly Brackets Returns True**
-    - Description: Tests if the method returns `true` when given only curly brackets.
-    - Input: `"{}"`.
-    - Expected Result: `true`.
+12. **Text After And Before Brackets Returns False**
+    - Description: Tests if the method returns `false` when given text, a closed Bracket and more text.
+    - Input: `"ab]c"`.
+    - Expected Result: `false`.
     - Code:
         ```java
-        @Test
-        public void onlyCurlyBracketsReturnsTrue() {
-            assertTrue(BalancedBrackets.hasBalancedBrackets("{}"));
+         @Test
+        public void textAfterAndBeforeBracketsReturnsFalse() {
+            assertFalse(BalancedBrackets.hasBalancedBrackets("ab]c"));
         }
         ```
 
-13. **Unbalanced Curly Brackets Returns False**
+13. **Text Before Brackets Returns False**
     - Description: Tests if the method returns `false` when given unbalanced curly brackets.
-    - Input: `"{"`.
+    - Input: `"ab]"`.
     - Expected Result: `false`.
     - Code:
         ```java
         @Test
-        public void unbalancedCurlyBracketsReturnsFalse() {
-            assertFalse(BalancedBrackets.hasBalancedBrackets("{"));
-        }
+        public void TextBeforeBracketsReturnsFalse() {
+            assertFalse(BalancedBrackets.hasBalancedBrackets("ab]"));
+        }   
         ```

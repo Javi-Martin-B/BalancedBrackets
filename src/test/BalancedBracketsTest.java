@@ -52,23 +52,23 @@ public class BalancedBracketsTest {
     }
 
     @Test
-    public void bracketsWithOtherCharactersReturnsTrue() {
+    public void bracketsWithTextReturnsTrue() {
         assertTrue(BalancedBrackets.hasBalancedBrackets("a[b]c"));
     }
 
     @Test
-    public void unbalancedBracketsWithOtherCharactersReturnsFalse() {
+    public void unbalancedBracketsTextReturnsFalse() {
         assertFalse(BalancedBrackets.hasBalancedBrackets("a[b"));
     }
 
     @Test
-    public void onlyCurlyBracketsReturnsTrue() {
-        assertTrue(BalancedBrackets.hasBalancedBrackets("{}"));
+    public void textAfterAndBeforeBracketsReturnsFalse() {
+        assertFalse(BalancedBrackets.hasBalancedBrackets("ab]c"));
     }
 
     @Test
-    public void unbalancedCurlyBracketsReturnsFalse() {
-        assertFalse(BalancedBrackets.hasBalancedBrackets("{"));
+    public void TextBeforeBracketsReturnsFalse() {
+        assertFalse(BalancedBrackets.hasBalancedBrackets("ab]"));
     }
 
 }
